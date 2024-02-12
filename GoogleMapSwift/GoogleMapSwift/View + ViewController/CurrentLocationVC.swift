@@ -17,6 +17,8 @@ class CurrentLocationVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Current Location"
+        
         getUserLocation()
         setupMap()
     }
@@ -47,6 +49,11 @@ extension CurrentLocationVC: CLLocationManagerDelegate {
         // Creates a marker
         let marker = GMSMarker()
         marker.position = location.coordinate
+        
+        location.reverseGeocoding { locationName in
+            print("\(locationName)")
+            marker.title = locationName
+        }
 //        marker.snippet = "BK Banani"
         marker.map = mapView
         

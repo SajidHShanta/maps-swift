@@ -15,12 +15,12 @@
 		FFE8A95B2B79DB4700F0DB2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFE8A95A2B79DB4700F0DB2A /* Assets.xcassets */; };
 		FFE8A95E2B79DB4700F0DB2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFE8A95C2B79DB4700F0DB2A /* LaunchScreen.storyboard */; };
 		FFE8A9692B79DBE800F0DB2A /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE8A9682B79DBE800F0DB2A /* test.swift */; };
-		FFE8A96B2B79DBF700F0DB2A /* test2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE8A96A2B79DBF700F0DB2A /* test2.swift */; };
 		FFE8A96F2B79DE8C00F0DB2A /* CurrentLocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE8A96E2B79DE8C00F0DB2A /* CurrentLocationVC.swift */; };
 		FFE8A9712B79DEB600F0DB2A /* PolygonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE8A9702B79DEB600F0DB2A /* PolygonVC.swift */; };
 		FFE8A9732B79DED900F0DB2A /* GeofenceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE8A9722B79DED900F0DB2A /* GeofenceVC.swift */; };
 		FFE8A9752B79DF0D00F0DB2A /* RouteDrawVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE8A9742B79DF0D00F0DB2A /* RouteDrawVC.swift */; };
 		FFE8A9772B79E2F600F0DB2A /* MapServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE8A9762B79E2F600F0DB2A /* MapServices.swift */; };
+		FFE8A9792B79F78800F0DB2A /* CLLocation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE8A9782B79F78800F0DB2A /* CLLocation+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,12 +36,12 @@
 		FFE8A95D2B79DB4700F0DB2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FFE8A95F2B79DB4700F0DB2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFE8A9682B79DBE800F0DB2A /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
-		FFE8A96A2B79DBF700F0DB2A /* test2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test2.swift; sourceTree = "<group>"; };
 		FFE8A96E2B79DE8C00F0DB2A /* CurrentLocationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationVC.swift; sourceTree = "<group>"; };
 		FFE8A9702B79DEB600F0DB2A /* PolygonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolygonVC.swift; sourceTree = "<group>"; };
 		FFE8A9722B79DED900F0DB2A /* GeofenceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofenceVC.swift; sourceTree = "<group>"; };
 		FFE8A9742B79DF0D00F0DB2A /* RouteDrawVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDrawVC.swift; sourceTree = "<group>"; };
 		FFE8A9762B79E2F600F0DB2A /* MapServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapServices.swift; sourceTree = "<group>"; };
+		FFE8A9782B79F78800F0DB2A /* CLLocation+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocation+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +131,7 @@
 		FFE8A9672B79DB9500F0DB2A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				FFE8A96A2B79DBF700F0DB2A /* test2.swift */,
+				FFE8A9782B79F78800F0DB2A /* CLLocation+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -274,7 +274,7 @@
 				FFE8A9772B79E2F600F0DB2A /* MapServices.swift in Sources */,
 				FFE8A9692B79DBE800F0DB2A /* test.swift in Sources */,
 				FFE8A9522B79DB4500F0DB2A /* AppDelegate.swift in Sources */,
-				FFE8A96B2B79DBF700F0DB2A /* test2.swift in Sources */,
+				FFE8A9792B79F78800F0DB2A /* CLLocation+Extension.swift in Sources */,
 				FFE8A9752B79DF0D00F0DB2A /* RouteDrawVC.swift in Sources */,
 				FFE8A9542B79DB4500F0DB2A /* SceneDelegate.swift in Sources */,
 				FFE8A96F2B79DE8C00F0DB2A /* CurrentLocationVC.swift in Sources */,

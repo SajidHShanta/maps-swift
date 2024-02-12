@@ -16,6 +16,23 @@ class PolygonVC: UIViewController, GMSMapViewDelegate {
         
         title = "Polygon Draw"
         setupMap()
+        
+        let polylineLocations = [
+            CLLocationCoordinate2D(latitude: 23.791119874561975, longitude: 90.40353225006605),
+            CLLocationCoordinate2D(latitude: 23.79130050952048, longitude: 90.40199910479149),
+            CLLocationCoordinate2D(latitude: 23.791137981772383, longitude: 90.40109069620814),
+        ]
+        
+        let rectangleLocations = [
+            CLLocationCoordinate2D(latitude: 23.791119874561975, longitude: 90.40353225006605),
+            CLLocationCoordinate2D(latitude: 23.790923543978405, longitude: 90.403141914213),
+            CLLocationCoordinate2D(latitude: 23.790757201685157, longitude: 90.4041711652695),
+            CLLocationCoordinate2D(latitude: 23.79126800398737, longitude: 90.40445536009842),
+            CLLocationCoordinate2D(latitude: 23.791119874561975, longitude: 90.40353225006605),
+        ]
+        
+        drawPolyline(polylineLocations)
+        drawRectangle(rectangleLocations)
     }
     
     fileprivate func setupMap() {
@@ -26,27 +43,31 @@ class PolygonVC: UIViewController, GMSMapViewDelegate {
         mapView.camera = camera
         
         // Creates a marker
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: 23.791119874561975, longitude: 90.40353225006605)
-        marker.title = "BK"
-        marker.snippet = "BK Banani"
-        marker.map = mapView
+//        let marker = GMSMarker()
+//        marker.position = CLLocationCoordinate2D(latitude: 23.791119874561975, longitude: 90.40353225006605)
+//        marker.title = "BK"
+//        marker.snippet = "BK Banani"
+//        marker.map = mapView
+    }
+    
+    func drawPolyline(_ locations : [CLLocationCoordinate2D]) {
+        let polylinePath = GMSMutablePath()
         
-        // draw polyline
-        let path = GMSMutablePath()
-        path.add(CLLocationCoordinate2D(latitude: 23.791119874561975, longitude: 90.40353225006605))
-        path.add(CLLocationCoordinate2D(latitude: 23.79130050952048, longitude: 90.40199910479149))
-        path.add(CLLocationCoordinate2D(latitude: 23.791137981772383, longitude: 90.40109069620814))
-        let polyline = GMSPolyline(path: path)
+        for location in locations {
+            polylinePath.add(location)
+        }
+        
+        let polyline = GMSPolyline(path: polylinePath)
         polyline.map = mapView
-        
-        // draw rectangle
+    }
+    
+    func drawRectangle(_ locations : [CLLocationCoordinate2D]) {
         let rectanglePath = GMSMutablePath()
-        rectanglePath.add(CLLocationCoordinate2D(latitude: 23.791119874561975, longitude: 90.40353225006605))
-        rectanglePath.add(CLLocationCoordinate2D(latitude: 23.790923543978405, longitude: 90.403141914213))
-        rectanglePath.add(CLLocationCoordinate2D(latitude: 23.790757201685157, longitude: 90.4041711652695))
-        rectanglePath.add(CLLocationCoordinate2D(latitude: 23.79126800398737, longitude: 90.40445536009842))
-        rectanglePath.add(CLLocationCoordinate2D(latitude: 23.791119874561975, longitude: 90.40353225006605))
+        
+        for location in locations {
+            rectanglePath.add(location)
+        }
+        
         let rectangle = GMSPolyline(path: rectanglePath)
         rectangle.strokeColor = .red
         rectangle.map = mapView

@@ -1,24 +1,232 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cik-cB-Ajl">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GoogleMapSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hhI-DK-34l">
+                                <rect key="frame" x="16" y="119.00000000000001" width="361" height="191.33333333333337"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vq7-BZ-zM7">
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="40.333333333333336"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Current Location"/>
+                                        <connections>
+                                            <segue destination="3gM-lA-URx" kind="show" id="YiY-bm-kLV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ict-B1-apc">
+                                        <rect key="frame" x="0.0" y="50.333333333333343" width="361" height="40.333333333333343"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Polygon"/>
+                                        <connections>
+                                            <segue destination="29c-Wr-5d5" kind="show" id="JCa-2Z-JOL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMJ-LX-pxs">
+                                        <rect key="frame" x="0.0" y="100.66666666666666" width="361" height="40.333333333333343"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Geofence"/>
+                                        <connections>
+                                            <segue destination="c4O-Kj-OFz" kind="show" id="idF-Ld-gXB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YkS-Ui-cIb">
+                                        <rect key="frame" x="0.0" y="151" width="361" height="40.333333333333343"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Route Draw"/>
+                                        <connections>
+                                            <segue destination="Hz6-in-3as" kind="show" id="o22-AR-mBt"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hhI-DK-34l" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="Td4-2F-CUY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hhI-DK-34l" secondAttribute="trailing" constant="16" id="eoJ-KX-P7W"/>
+                            <constraint firstItem="hhI-DK-34l" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="rV5-wo-IRv"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="VRf-h6-4Ey"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="813" y="-2"/>
+        </scene>
+        <!--GeofenceVC-->
+        <scene sceneID="SYB-pI-vRj">
+            <objects>
+                <viewController id="c4O-Kj-OFz" customClass="GeofenceVC" customModule="GoogleMapSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cQp-hl-lTE">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="62O-5D-Og7" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="VZ2-te-Elt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VZ2-te-Elt" firstAttribute="trailing" secondItem="62O-5D-Og7" secondAttribute="trailing" id="Uuu-eo-Vkj"/>
+                            <constraint firstItem="VZ2-te-Elt" firstAttribute="bottom" secondItem="62O-5D-Og7" secondAttribute="bottom" id="e9s-wO-ba0"/>
+                            <constraint firstItem="62O-5D-Og7" firstAttribute="top" secondItem="VZ2-te-Elt" secondAttribute="top" id="nhh-tc-YNR"/>
+                            <constraint firstItem="62O-5D-Og7" firstAttribute="leading" secondItem="VZ2-te-Elt" secondAttribute="leading" id="tH5-CI-y6i"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="rXt-mp-kiV"/>
+                    <connections>
+                        <outlet property="mapView" destination="62O-5D-Og7" id="wPh-Yk-fzU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZGT-e5-hLK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2349" y="706"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7Ec-8N-ban">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cik-cB-Ajl" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fQA-ND-MVe">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="4nu-P5-Oei"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f5c-Aw-SZV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="57.251908396946561" y="-2.1126760563380285"/>
+        </scene>
+        <!--Route DrawVC-->
+        <scene sceneID="ME3-5c-W3U">
+            <objects>
+                <viewController id="Hz6-in-3as" customClass="RouteDrawVC" customModule="GoogleMapSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wu9-WV-ahb">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t8I-Dh-pWV" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0F7-Z1-ODq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0F7-Z1-ODq" firstAttribute="bottom" secondItem="t8I-Dh-pWV" secondAttribute="bottom" id="4TV-x4-KHh"/>
+                            <constraint firstItem="t8I-Dh-pWV" firstAttribute="leading" secondItem="0F7-Z1-ODq" secondAttribute="leading" id="miv-XW-QP5"/>
+                            <constraint firstItem="0F7-Z1-ODq" firstAttribute="trailing" secondItem="t8I-Dh-pWV" secondAttribute="trailing" id="pG9-rQ-PYY"/>
+                            <constraint firstItem="t8I-Dh-pWV" firstAttribute="top" secondItem="0F7-Z1-ODq" secondAttribute="top" id="vaK-2D-E1h"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="8GC-R7-TwG"/>
+                    <connections>
+                        <outlet property="mapView" destination="t8I-Dh-pWV" id="Efn-hf-X7g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hbo-yr-kUp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3094" y="706"/>
+        </scene>
+        <!--Current LocationVC-->
+        <scene sceneID="nct-uK-xus">
+            <objects>
+                <viewController id="3gM-lA-URx" customClass="CurrentLocationVC" customModule="GoogleMapSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cz5-CM-Wax">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ss-Vb-4Ph" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qp8-ls-G8G"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qp8-ls-G8G" firstAttribute="bottom" secondItem="7Ss-Vb-4Ph" secondAttribute="bottom" id="Aei-ZE-ILd"/>
+                            <constraint firstItem="7Ss-Vb-4Ph" firstAttribute="leading" secondItem="qp8-ls-G8G" secondAttribute="leading" id="nz1-iY-lOy"/>
+                            <constraint firstItem="7Ss-Vb-4Ph" firstAttribute="top" secondItem="qp8-ls-G8G" secondAttribute="top" id="oMx-db-PDy"/>
+                            <constraint firstItem="qp8-ls-G8G" firstAttribute="trailing" secondItem="7Ss-Vb-4Ph" secondAttribute="trailing" id="tbs-iW-dfW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="FJu-lu-fvy"/>
+                    <connections>
+                        <outlet property="mapView" destination="7Ss-Vb-4Ph" id="Xjc-gc-nBk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fYr-C6-fdL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="813" y="706"/>
+        </scene>
+        <!--PolygonVC-->
+        <scene sceneID="ZWf-lf-f3T">
+            <objects>
+                <viewController id="29c-Wr-5d5" customClass="PolygonVC" customModule="GoogleMapSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="svp-HZ-fMW">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iep-db-79U" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ee3-fO-TT3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ee3-fO-TT3" firstAttribute="trailing" secondItem="Iep-db-79U" secondAttribute="trailing" id="3cV-Je-O0t"/>
+                            <constraint firstItem="Iep-db-79U" firstAttribute="top" secondItem="Ee3-fO-TT3" secondAttribute="top" id="KYt-uE-c5X"/>
+                            <constraint firstItem="Ee3-fO-TT3" firstAttribute="bottom" secondItem="Iep-db-79U" secondAttribute="bottom" id="P7R-HW-NyJ"/>
+                            <constraint firstItem="Iep-db-79U" firstAttribute="leading" secondItem="Ee3-fO-TT3" secondAttribute="leading" id="XUH-Va-GbR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="gkI-90-hAA"/>
+                    <connections>
+                        <outlet property="mapView" destination="Iep-db-79U" id="rCH-s2-qs0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eum-p2-FTd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1581" y="708"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

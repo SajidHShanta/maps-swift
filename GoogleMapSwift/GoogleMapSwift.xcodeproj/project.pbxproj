@@ -42,6 +42,7 @@
 		FFE8A9742B79DF0D00F0DB2A /* RouteDrawVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDrawVC.swift; sourceTree = "<group>"; };
 		FFE8A9762B79E2F600F0DB2A /* MapServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapServices.swift; sourceTree = "<group>"; };
 		FFE8A9782B79F78800F0DB2A /* CLLocation+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocation+Extension.swift"; sourceTree = "<group>"; };
+		FFE8A97A2B7A16E200F0DB2A /* SimulateGeofencing.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SimulateGeofencing.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +116,7 @@
 				FFE8A9702B79DEB600F0DB2A /* PolygonVC.swift */,
 				FFE8A9722B79DED900F0DB2A /* GeofenceVC.swift */,
 				FFE8A9742B79DF0D00F0DB2A /* RouteDrawVC.swift */,
+				FFE8A97A2B7A16E200F0DB2A /* SimulateGeofencing.gpx */,
 			);
 			path = "View + ViewController";
 			sourceTree = "<group>";

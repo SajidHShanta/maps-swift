@@ -37,17 +37,8 @@ class PolygonVC: UIViewController, GMSMapViewDelegate {
     
     fileprivate func setupMap() {
         mapView.delegate = self
-        
-        // Create a GMSCameraPosition that tells the map to display the location
         let camera = GMSCameraPosition.camera(withLatitude: 23.791119874561975, longitude: 90.40353225006605, zoom: 17)
         mapView.camera = camera
-        
-        // Creates a marker
-//        let marker = GMSMarker()
-//        marker.position = CLLocationCoordinate2D(latitude: 23.791119874561975, longitude: 90.40353225006605)
-//        marker.title = "BK"
-//        marker.snippet = "BK Banani"
-//        marker.map = mapView
     }
     
     func drawPolyline(_ locations : [CLLocationCoordinate2D]) {

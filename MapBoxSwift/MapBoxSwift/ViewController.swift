@@ -12,13 +12,26 @@ class ViewController: UIViewController {
     
     var mapView: MapView!
     let defaultCoordinate = CLLocationCoordinate2D(latitude: 23.7925, longitude: 90.4057)
+    var dhakaCoordinates: [CLLocationCoordinate2D] = [
+        CLLocationCoordinate2D(latitude: 23.7925, longitude: 90.4057),
+        CLLocationCoordinate2D(latitude: 23.7918, longitude: 90.4069),
+        CLLocationCoordinate2D(latitude: 23.7911, longitude: 90.4055),
+        CLLocationCoordinate2D(latitude: 23.7904, longitude: 90.4063),
+        CLLocationCoordinate2D(latitude: 23.7897, longitude: 90.4072),
+        CLLocationCoordinate2D(latitude: 23.7890, longitude: 90.4059),
+        CLLocationCoordinate2D(latitude: 23.7883, longitude: 90.4075),
+        CLLocationCoordinate2D(latitude: 23.7876, longitude: 90.4067),
+        CLLocationCoordinate2D(latitude: 23.7869, longitude: 90.4081),
+        CLLocationCoordinate2D(latitude: 23.7862, longitude: 90.4073)
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
         setupMapBox()
-        draMarker(at: defaultCoordinate)
+//        draMarker(at: defaultCoordinate) // single marker
+        drawMultipleMarkers(at: dhakaCoordinates) // multiple markers
     }
 
     fileprivate func setupMapBox() {
@@ -41,6 +54,18 @@ class ViewController: UIViewController {
 
         // Add the annotation to the manager in order to render it on the map.
         pointAnnotationManager.annotations = [pointAnnotation]
+    }
+    
+    fileprivate func drawMultipleMarkers(at coordinates: [CLLocationCoordinate2D]) {
+        var pointAnnotations: [PointAnnotation] = []
+        for location in coordinates {
+            var pointAnnotation = PointAnnotation(coordinate: location)
+            pointAnnotation.image = .init(image: UIImage(named: "dest-pin")!, name: "dest-pin")
+            pointAnnotation.iconSize = 0.04
+            pointAnnotations.append(pointAnnotation)
+        }
+        let pointAnnotationManager = mapView.annotations.makePointAnnotationManager()
+        pointAnnotationManager.annotations = pointAnnotations
     }
 }
 

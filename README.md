@@ -18,7 +18,7 @@ Dive into Google Maps with comprehensive coverage on the following topics:
 
 ## Map Box
 
-Explore additional mapping capabilities with [Map Box](https://docs.mapbox.com/ios/legacy/maps/guides/) and enhance your app with advanced features.
+Explore additional mapping capabilities with [Map Box](https://docs.mapbox.com/ios/maps/guides/install/) and enhance your app with advanced features.
 //TO-DO
 
 ## Installation Guide

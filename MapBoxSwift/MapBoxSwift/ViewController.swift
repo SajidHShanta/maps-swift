@@ -30,10 +30,10 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         setupMapBox()
-//        draMarker(at: defaultCoordinate) // single marker
+        //        draMarker(at: defaultCoordinate) // single marker
         drawMultipleMarkers(at: dhakaCoordinates) // multiple markers
     }
-
+    
     fileprivate func setupMapBox() {
         mapView = MapView(frame: view.bounds)
         let defaultCameraOptions = CameraOptions(center: defaultCoordinate, zoom: 15, bearing: 0, pitch: 0)
@@ -44,14 +44,14 @@ class ViewController: UIViewController {
     fileprivate func draMarker(at someCoordinate: CLLocationCoordinate2D) {
         // Initialize a point annotation with a CLLocationCoordinate2D
         var pointAnnotation = PointAnnotation(coordinate: someCoordinate)
-
+        
         // Make the annotation show a red pin
         pointAnnotation.image = .init(image: UIImage(named: "dest-pin")!, name: "dest-pin")
         pointAnnotation.iconSize = 0.04
-
+        
         // Create the `PointAnnotationManager`, which will be responsible for handling this annotation
         let pointAnnotationManager = mapView.annotations.makePointAnnotationManager()
-
+        
         // Add the annotation to the manager in order to render it on the map.
         pointAnnotationManager.annotations = [pointAnnotation]
     }
@@ -62,6 +62,10 @@ class ViewController: UIViewController {
             var pointAnnotation = PointAnnotation(coordinate: location)
             pointAnnotation.image = .init(image: UIImage(named: "dest-pin")!, name: "dest-pin")
             pointAnnotation.iconSize = 0.04
+            pointAnnotation.tapHandler = { context in
+                print("tapped point annotation at \(context.coordinate)")
+                return true
+            }
             pointAnnotations.append(pointAnnotation)
         }
         let pointAnnotationManager = mapView.annotations.makePointAnnotationManager()

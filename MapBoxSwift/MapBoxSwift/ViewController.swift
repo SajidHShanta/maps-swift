@@ -24,6 +24,7 @@ class ViewController: UIViewController {
         CLLocationCoordinate2D(latitude: 23.7869, longitude: 90.4081),
         CLLocationCoordinate2D(latitude: 23.7862, longitude: 90.4073)
     ]
+    var selectedAnnotation: PointAnnotation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,18 +58,31 @@ class ViewController: UIViewController {
     }
     
     fileprivate func drawMultipleMarkers(at coordinates: [CLLocationCoordinate2D]) {
+        let pointAnnotationManager = mapView.annotations.makePointAnnotationManager()
         var pointAnnotations: [PointAnnotation] = []
+
         for location in coordinates {
             var pointAnnotation = PointAnnotation(coordinate: location)
             pointAnnotation.image = .init(image: UIImage(named: "dest-pin")!, name: "dest-pin")
             pointAnnotation.iconSize = 0.04
+            
             pointAnnotation.tapHandler = { context in
                 print("tapped point annotation at \(context.coordinate)")
+
+                self.selectedAnnotation = pointAnnotation
+
+                // Update the iconSize  in PointAnnotationManager
+                pointAnnotationManager.annotations = pointAnnotationManager.annotations.map { annotation in
+                    var tempAnnotation = annotation
+                    tempAnnotation.iconSize = (annotation.id == self.selectedAnnotation?.id) ? 0.06 : 0.04
+                    return tempAnnotation
+                }
                 return true
             }
+            
             pointAnnotations.append(pointAnnotation)
         }
-        let pointAnnotationManager = mapView.annotations.makePointAnnotationManager()
+        
         pointAnnotationManager.annotations = pointAnnotations
     }
 }

@@ -18,8 +18,13 @@ Dive into Google Maps with comprehensive coverage on the following topics:
 
 ## Map Box
 
-Explore additional mapping capabilities with [Map Box](https://docs.mapbox.com/ios/maps/guides/install/) and enhance your app with advanced features.
-//TO-DO
+Explore additional mapping capabilities with [Map Box](https://docs.mapbox.com/ios/maps/guides/)
+
+* **Show Location on Map**:  display any location on the map.
+* **Draw Multiple Markers**: Draw multiple markers on the map with MapBox.
+* **Make the Markers Tappable**: Enable users to interact with Mapbox markers by making them tappable.
+* **Make the Markers Selectable**: Provide users with a seamless experience by making markers selectable.
+
 
 ## Installation Guide
 
@@ -27,6 +32,7 @@ Follow these simple steps to set up the project effortlessly:
 
 1. **Clone Repository**: Clone this repository and navigate to the project directory.
 2. **Pod Installation**: Run `pod install` to seamlessly incorporate the necessary dependencies into your project.
+3. For detailed Map Box installation instructions, refer to the [Map Box Installation Guide](https://docs.mapbox.com/ios/maps/guides/install/).
 
 ### API Key Setup
 
